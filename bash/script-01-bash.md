@@ -93,5 +93,12 @@ done
 
 ### Ваш скрипт:
 ```bash
-???
+#!/bin/bash
+INPUT_FILE=$1
+START_LINE=`head -n1 $INPUT_FILE`
+PATTERN="^\\[.{1,28}\\]"
+if ! [[ "$START_LINE" =~ $PATTERN ]] || [ ${#START_LINE} -gt 30 ]; then
+  echo "Bad commit message, see example: [commit message]. Message length <= 30 symbols"
+  exit 1
+fi
 ```
