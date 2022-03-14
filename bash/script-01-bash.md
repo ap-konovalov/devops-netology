@@ -47,7 +47,8 @@ done
 curl https://localhost:4757
 while (($?==0))
 do
-	date >> curl.log
+    sleep 5
+	date > curl.log
 	curl https://localhost:4757
 done
 ```
