@@ -93,7 +93,6 @@ for result in result_os.split('\n'):
 ```python
 #!/usr/bin/env python3
 
-import re
 import socket
 import pickle
 
