@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:8-oracle
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    volumes:
+      - ./backups:/var/backups
+      - ./my-db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+      - "33060:33060"
