@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: asdWc83Ps
+    volumes:
+      - ./backups:/var/backups
+      - ./volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
