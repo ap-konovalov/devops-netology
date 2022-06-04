@@ -1,0 +1,9 @@
+cluster.name: cluster_netology_test
+discovery.type: single-node
+xpack.security.enabled: false
+node.name: netology_test
+path.data: /var/lib/data
+path.logs: /var/lib/logs
+path.repo: /usr/share/elasticsearch/snapshots
+network.host: 0.0.0.0
+discovery.seed_hosts: ["127.0.0.1", "[::1]"]
