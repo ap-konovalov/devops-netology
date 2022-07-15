@@ -20,9 +20,14 @@
     * Какому регулярному выражению должно подчиняться имя?
 ***
 Ответы:<br>
-[Resource](https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/provider.go#L411) <br>
+#### Задача 1
+1) [Resource](https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/provider.go#L411) <br>
 [DataSources](https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/provider.go#L169)
+2) [name конфликтует с: `ConflictsWith: []string{"name_prefix"}`](https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/resource_aws_sqs_queue.go#L56)
 
+[максимальная длинна имени: 80 символов](https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/validators.go#L1038)
+
+[Регулярное выражение для имени: `[0-9A-Za-z-_]` + ограничения fifo, которые определены в func validateSQSNonFifoQueueName func validateSQSFifoQueueName.](https://github.com/hashicorp/terraform-provider-aws/blob/8e4d8a3f3f781b83f96217c2275f541c893fec5a/aws/validators.go#L1041)
 ## Задача 2. (Не обязательно)
 В рамках вебинара и презентации мы разобрали как создать свой собственный провайдер на примере кофемашины.
 Также вот официальная документация о создании провайдера:
