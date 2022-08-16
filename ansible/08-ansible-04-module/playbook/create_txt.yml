@@ -1,0 +1,5 @@
+---
+- name: Create file
+  hosts: localhost
+  roles:
+    - create_txt
