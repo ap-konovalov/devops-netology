@@ -1,0 +1,17 @@
+node {
+    stage("Git checkout"){
+        git credentialsId: '7809a850-6110-4e3e-97ce-e9023bbd7be8', url: 'git@github.com:ap-konovalov/example-playbook.git'
+    }
+    stage("Check ssh key"){
+        secret_check=true
+    }
+    stage("Run playbook"){
+        if (secret_check){
+            sh 'ansible-playbook site.yml -i inventory/prod.yml'
+        }
+        else{
+            echo 'no more keys'
+        }
+
+    }
+}
