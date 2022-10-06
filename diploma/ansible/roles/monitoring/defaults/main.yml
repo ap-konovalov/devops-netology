@@ -1,0 +1,26 @@
+alertmanager_user: "{{ prometheus_user }}"
+alertmanager_group: "{{ prometheus_group }}"
+alertmanager_bin_path: "/usr/local/bin"
+alertmanager_tmp_path: "/tmp/alertmanager"
+alertmanager_config_path: "/etc/alertmanager"
+alertmanager_config_file: "alertmanager.yml"
+alertmanager_storage_path: "/var/lib/prometheus/alertmanager"
+
+prometheus_user: "prometheus"
+prometheus_group: "prometheus"
+prometheus_version: 2.36.2
+prometheus_binary_local_dir: ''
+prometheus_skip_install: false
+prometheus_binary_install_dir: '/usr/local/bin'
+prometheus_metrics_path:
+prometheus_config_dir: /etc/prometheus
+prometheus_db_dir: /var/lib/prometheus
+prometheus_read_only_dirs: []
+
+prometheus_web_listen_address: "0.0.0.0:9090"
+prometheus_web_external_url: ''
+prometheus_storage_retention: "30d"
+prometheus_storage_retention_size: "0"
+prometheus_config_flags_extra: {}
+
+prometheus_config_file: 'prometheus.yml.j2'
